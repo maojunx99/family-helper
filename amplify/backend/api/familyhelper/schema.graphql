@@ -1,12 +1,12 @@
 # This "input" configures a global authorization rule to enable public access to
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+# input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 type List @model {
   id: ID!
   title: String!
   description: String
-  listItems: [ListItem] @connection(name:"ListListItems")
+  listItems: [ListItem] @hasMany(fields:["id"])
 }
 
 type ListItem @model {
@@ -14,12 +14,12 @@ type ListItem @model {
   title: String!
   quantity: Int
   done: Boolean
-  list: List @connection(name:"ListListItems")
-  actions: [Action] @connection(name:"ListItemAction")
+  list: List @belongsTo(fields:["id"])
+  actions: [Action] @hasMany(fields:["id"])
 }
 
 type Action @model{
   id: ID!
   action: String
-  listItem: ListItem @connection(name:"ListItemAction")
+  listItem: ListItem @belongsTo(fields:["id"])
 }
