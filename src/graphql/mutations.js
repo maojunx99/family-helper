@@ -18,11 +18,13 @@ export const createList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -43,11 +45,13 @@ export const updateList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -68,11 +72,13 @@ export const deleteList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -95,6 +101,7 @@ export const createListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -102,11 +109,13 @@ export const createListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -129,6 +138,7 @@ export const updateListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -136,11 +146,13 @@ export const updateListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -163,6 +175,7 @@ export const deleteListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -170,11 +183,13 @@ export const deleteListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -197,15 +212,18 @@ export const createAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -228,15 +246,18 @@ export const updateAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -259,15 +280,18 @@ export const deleteAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;

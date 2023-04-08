@@ -15,11 +15,13 @@ export const onCreateList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -37,11 +39,13 @@ export const onUpdateList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -59,17 +63,22 @@ export const onDeleteList = /* GraphQL */ `
           done
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateListItem = /* GraphQL */ `
-  subscription OnCreateListItem($filter: ModelSubscriptionListItemFilterInput) {
-    onCreateListItem(filter: $filter) {
+  subscription OnCreateListItem(
+    $filter: ModelSubscriptionListItemFilterInput
+    $owner: String
+  ) {
+    onCreateListItem(filter: $filter, owner: $owner) {
       id
       title
       quantity
@@ -83,6 +92,7 @@ export const onCreateListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -90,17 +100,22 @@ export const onCreateListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateListItem = /* GraphQL */ `
-  subscription OnUpdateListItem($filter: ModelSubscriptionListItemFilterInput) {
-    onUpdateListItem(filter: $filter) {
+  subscription OnUpdateListItem(
+    $filter: ModelSubscriptionListItemFilterInput
+    $owner: String
+  ) {
+    onUpdateListItem(filter: $filter, owner: $owner) {
       id
       title
       quantity
@@ -114,6 +129,7 @@ export const onUpdateListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -121,17 +137,22 @@ export const onUpdateListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteListItem = /* GraphQL */ `
-  subscription OnDeleteListItem($filter: ModelSubscriptionListItemFilterInput) {
-    onDeleteListItem(filter: $filter) {
+  subscription OnDeleteListItem(
+    $filter: ModelSubscriptionListItemFilterInput
+    $owner: String
+  ) {
+    onDeleteListItem(filter: $filter, owner: $owner) {
       id
       title
       quantity
@@ -145,6 +166,7 @@ export const onDeleteListItem = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       actions {
         items {
@@ -152,17 +174,22 @@ export const onDeleteListItem = /* GraphQL */ `
           action
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateAction = /* GraphQL */ `
-  subscription OnCreateAction($filter: ModelSubscriptionActionFilterInput) {
-    onCreateAction(filter: $filter) {
+  subscription OnCreateAction(
+    $filter: ModelSubscriptionActionFilterInput
+    $owner: String
+  ) {
+    onCreateAction(filter: $filter, owner: $owner) {
       id
       action
       listItem {
@@ -176,21 +203,27 @@ export const onCreateAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateAction = /* GraphQL */ `
-  subscription OnUpdateAction($filter: ModelSubscriptionActionFilterInput) {
-    onUpdateAction(filter: $filter) {
+  subscription OnUpdateAction(
+    $filter: ModelSubscriptionActionFilterInput
+    $owner: String
+  ) {
+    onUpdateAction(filter: $filter, owner: $owner) {
       id
       action
       listItem {
@@ -204,21 +237,27 @@ export const onUpdateAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteAction = /* GraphQL */ `
-  subscription OnDeleteAction($filter: ModelSubscriptionActionFilterInput) {
-    onDeleteAction(filter: $filter) {
+  subscription OnDeleteAction(
+    $filter: ModelSubscriptionActionFilterInput
+    $owner: String
+  ) {
+    onDeleteAction(filter: $filter, owner: $owner) {
       id
       action
       listItem {
@@ -232,15 +271,18 @@ export const onDeleteAction = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          owner
         }
         actions {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
